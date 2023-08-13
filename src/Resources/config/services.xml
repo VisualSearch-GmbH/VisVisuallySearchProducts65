@@ -1,0 +1,30 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <imports>
+        <import resource="./dependencies/api.xml"/>
+        <import resource="./dependencies/controller.xml"/>
+        <import resource="./dependencies/subscriber.xml"/>
+        <import resource="./dependencies/decorator.xml"/>
+    </imports>
+
+    <services>
+        <service id="vis.visually_search_products.logger" class="Monolog\Logger">
+            <factory service="Shopware\Core\Framework\Log\LoggerFactory" method="createRotating"/>
+            <argument type="string">vis-visually-search-products</argument>
+        </service>
+
+        <service id="Vis\VisuallySearchProducts\Service\HelperService">
+            <argument type="service" id="Shopware\Core\System\SystemConfig\SystemConfigService"/>
+        </service>
+
+        <service id="Vis\VisuallySearchProducts\Service\VisuallySearchApiService">
+            <argument type="service" id="Vis\VisuallySearchProducts\Api\Client\VisuallySearchClient"/>
+            <argument type="service" id="sales_channel.repository"/>
+            <argument type="service" id="vis.visually_search_products.logger"/>
+        </service>
+    </services>
+</container>

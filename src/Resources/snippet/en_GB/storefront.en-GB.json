@@ -1,0 +1,8 @@
+{
+  "visVisuallySearchProducts": {
+    "invalidApiCredentialsErrorMessage": "Invalid API credentials.",
+    "search": {
+      "headline": "{0} 0 products found | {1} One product found | ]1,Inf[ %count% products found"
+    }
+  }
+}

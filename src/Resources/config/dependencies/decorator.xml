@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+        <defaults public="true"/>
+
+        <service id="Vis\VisuallySearchProducts\Core\Framework\DataAbstractionLayer\Dbal\CriteriaQueryBuilderDecorator"
+                 decorates="Shopware\Core\Framework\DataAbstractionLayer\Dbal\CriteriaQueryBuilder">
+            <argument type="service" id="Vis\VisuallySearchProducts\Core\Framework\DataAbstractionLayer\Dbal\CriteriaQueryBuilderDecorator.inner"/>
+            <argument type="service" id="Shopware\Core\Framework\DataAbstractionLayer\Search\Parser\SqlQueryParser"/>
+            <argument type="service" id="Shopware\Core\Framework\DataAbstractionLayer\Dbal\EntityDefinitionQueryHelper"/>
+            <argument type="service" id="Shopware\Core\Framework\DataAbstractionLayer\Search\Term\SearchTermInterpreter"/>
+            <argument type="service" id="Shopware\Core\Framework\DataAbstractionLayer\Search\Term\EntityScoreQueryBuilder"/>
+            <argument type="service" id="Shopware\Core\Framework\DataAbstractionLayer\Dbal\JoinGroupBuilder"/>
+            <argument type="service" id="Shopware\Core\Framework\DataAbstractionLayer\Dbal\FieldResolver\CriteriaPartResolver"/>
+        </service>
+    </services>
+</container>

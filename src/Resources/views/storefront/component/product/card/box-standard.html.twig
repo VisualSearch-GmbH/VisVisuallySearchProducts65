@@ -1,0 +1,36 @@
+{% sw_extends '@Storefront/storefront/component/product/card/box-standard.html.twig' %}
+
+{% block component_product_box_content %}
+    {% block vis_product_box_button_block %}
+        {% if config("VisVisuallySearchProducts.config.apiKey") and cover.url %}
+            <form action="{{ path('frontend.vis.url-search.page') }}"
+                  method="post"
+                  enctype="multipart/form-data">
+                {% block vis_product_box_csrf %}
+                    {{ sw_csrf('frontend.vis.url-search.page') }}
+                {% endblock %}
+
+                {% block vis_product_box_button %}
+                    <button class="vis-search-btn btn mb-0">
+                        <span class="vis-search-icon">
+                            {% sw_icon 'eye-open' style {'color': 'primary', 'class': ' text-primary'} %}
+                        </span>
+                    </button>
+                {% endblock %}
+
+                {% block vis_product_box_input_image %}
+                    <input type="hidden"
+                           value="{{ cover.url }}"
+                           name="image"/>
+                {% endblock %}
+
+                {% block vis_product_box_input_product_id %}
+                    <input type="hidden"
+                           value="{{ product.id }}"
+                           name="productId"/>
+                {% endblock %}
+            </form>
+        {% endif %}
+    {% endblock %}
+    {{ parent() }}
+{% endblock %}

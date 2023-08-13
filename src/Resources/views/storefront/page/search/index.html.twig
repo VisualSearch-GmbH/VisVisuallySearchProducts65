@@ -1,0 +1,8 @@
+{% sw_extends '@Storefront/storefront/page/search/index.html.twig' %}
+
+{% block page_search_headline_text %}
+    {{ "visVisuallySearchProducts.search.headline"|trans({
+        '%count%': page.listing.total,
+        '%searchTerm%': page.searchTerm,
+    }) }}
+{% endblock %}

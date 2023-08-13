@@ -1,0 +1,46 @@
+{
+  "name": "vis/visually-search-products",
+  "description": "Offer your customers the possibility of finding products using single picture!",
+  "version": "2.0.0",
+  "type": "shopware-platform-plugin",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "VisualSearch GmbH",
+      "email": "office@visualsearch.at",
+      "homepage": "https://www.visualsearch.at"
+    }
+  ],
+  "require": {
+    "shopware/core": "^6.5.0.0"
+  },
+  "conflict": {
+    "shopware/storefront": "<6,>=7",
+    "shopware/administration": "<6,>=7"
+  },
+  "autoload": {
+    "psr-4": {
+      "Vis\\VisuallySearchProducts\\": "src/"
+    }
+  },
+  "extra": {
+    "shopware-plugin-class": "Vis\\VisuallySearchProducts\\VisVisuallySearchProducts",
+    "copyright": "Copyright (c) 2021 VisualSearch GmbH",
+    "label": {
+      "de-DE": "Visuelle Suche nach Produkten",
+      "en-GB": "Visually Search for Products"
+    },
+    "description": {
+      "de-DE": "Visuelle Produktsuche mit Hilfe einer Kamerataste in der Suchleiste.",
+      "en-GB": "Visually search products using a camera button in the search bar."
+    },
+    "manufacturerLink": {
+      "de-DE": "https://www.visualsearch.at/",
+      "en-GB": "https://www.visualsearch.at/"
+    },
+    "supportLink": {
+      "de-DE": "https://www.visualsearch.at/index.php/support",
+      "en-GB": "https://www.visualsearch.at/index.php/support"
+    }
+  }
+}

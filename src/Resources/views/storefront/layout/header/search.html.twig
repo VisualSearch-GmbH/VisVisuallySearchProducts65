@@ -1,0 +1,42 @@
+{% sw_extends '@Storefront/storefront/layout/header/search.html.twig' %}
+
+{% block layout_header_search %}
+    {% block vis_search_form %}
+        {% if config("VisVisuallySearchProducts.config.apiKey") %}
+            <form action="{{ path('frontend.vis.search.page') }}"
+                  method="post"
+                  enctype="multipart/form-data"
+                  data-form-auto-submit="true"
+                  class="vis-search-form mr-2">
+                {% block vis_search_form_csrf %}
+                    {{ sw_csrf('frontend.vis.search.page') }}
+                {% endblock %}
+
+                {% block vis_search_form_input %}
+                    <input id="visually-search-image"
+                           class="d-none"
+                           type="file"
+                           accept="image/*"
+                           name="image"/>
+                {% endblock %}
+            </form>
+        {% endif %}
+    {% endblock %}
+    {{ parent() }}
+{% endblock %}
+
+{% block layout_header_search_input %}
+    {% if config("VisVisuallySearchProducts.config.apiKey") %}
+        {% block vis_search_form_button %}
+            <label for="visually-search-image"
+                   class="vis-search-btn btn mb-0">
+                <span class="vis-search-icon">
+                    {% sw_icon 'eye-open' style {'color': 'primary', 'class': ' text-primary'} %}
+                </span>
+            </label>
+        {% endblock %}
+        {{ parent() }}
+    {% else %}
+        {{ parent() }}
+    {% endif %}
+{% endblock %}

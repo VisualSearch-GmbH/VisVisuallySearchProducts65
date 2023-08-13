@@ -1,0 +1,8 @@
+{
+  "visVisuallySearchProducts": {
+    "invalidApiCredentialsErrorMessage": "Ungültige API-Anmeldeinformationen.",
+    "search": {
+      "headline": "{0} kein Produkt gefunden | {1} 1 Produkt gefunden | ]1,Inf[ %count% Produkte gefunden"
+    }
+  }
+}
