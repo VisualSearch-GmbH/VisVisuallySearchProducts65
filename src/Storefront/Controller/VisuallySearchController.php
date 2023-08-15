@@ -8,7 +8,6 @@
 namespace Vis\VisuallySearchProducts\Storefront\Controller;
 
 use Shopware\Core\Framework\Context;
-use Shopware\Core\Framework\Routing\Annotation\RouteScope;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\HttpFoundation\RedirectResponse;
@@ -20,7 +19,7 @@ use Vis\VisuallySearchProducts\Service\HelperServiceInterface;
 use Vis\VisuallySearchProducts\Service\VisuallySearchApiServiceInterface;
 
 /**
- * @RouteScope(scopes={"storefront"})
+ * @Route(defaults={"_routeScope"={"storefront"}})
  */
 class VisuallySearchController extends AbstractController
 {

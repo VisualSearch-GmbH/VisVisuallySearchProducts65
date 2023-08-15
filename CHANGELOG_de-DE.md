@@ -1,5 +1,5 @@
-# 2.0.0
-- Version für SW 6.5.3.3
+# 2.0.1
+- Fixing bugs
 
 # 1.0.5
 - Bildname aus der Überschrift der Suchseite entfernt

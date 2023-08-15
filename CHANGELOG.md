@@ -1,3 +1,6 @@
+# 2.0.1
+- Fixing bugs
+
 # 2.0.0
 - Version for SW 6.5.3.3
 

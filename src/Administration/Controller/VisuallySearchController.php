@@ -10,7 +10,6 @@ namespace Vis\VisuallySearchProducts\Administration\Controller;
 use Shopware\Core\Framework\Context;
 use Shopware\Core\Framework\DataAbstractionLayer\Search\Criteria;
 use Shopware\Core\Framework\DataAbstractionLayer\Search\Filter\EqualsFilter;
-use Shopware\Core\Framework\Routing\Annotation\RouteScope;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
@@ -19,7 +18,7 @@ use Vis\VisuallySearchProducts\Util\SwRepoUtils;
 use Vis\VisuallySearchProducts\Service\VisuallySearchApiServiceInterface;
 
 /**
- * @RouteScope(scopes={"administration"})
+ * @Route(defaults={"_routeScope"={"api"}})
  */
 class VisuallySearchController extends AbstractController
 {
