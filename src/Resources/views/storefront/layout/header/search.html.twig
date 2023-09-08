@@ -8,9 +8,6 @@
                   enctype="multipart/form-data"
                   data-form-auto-submit="true"
                   class="vis-search-form mr-2">
-                {% block vis_search_form_csrf %}
-                    {{ sw_csrf('frontend.vis.search.page') }}
-                {% endblock %}
 
                 {% block vis_search_form_input %}
                     <input id="visually-search-image"

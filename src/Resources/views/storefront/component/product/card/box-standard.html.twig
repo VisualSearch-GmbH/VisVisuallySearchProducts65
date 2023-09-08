@@ -6,9 +6,6 @@
             <form action="{{ path('frontend.vis.url-search.page') }}"
                   method="post"
                   enctype="multipart/form-data">
-                {% block vis_product_box_csrf %}
-                    {{ sw_csrf('frontend.vis.url-search.page') }}
-                {% endblock %}
 
                 {% block vis_product_box_button %}
                     <button class="vis-search-btn btn mb-0">
