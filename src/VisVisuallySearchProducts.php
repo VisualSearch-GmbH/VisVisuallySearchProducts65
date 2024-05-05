@@ -34,9 +34,15 @@ class VisVisuallySearchProducts extends Plugin
             case version_compare($shopwareVersion, '6.4', '<'):
                 $prefix = '63';
                 break;
-            case version_compare($shopwareVersion, '6.4', '>='):
-            default:
+            case version_compare($shopwareVersion, '6.5', '<'):
                 $prefix = '64';
+                break;
+            case version_compare($shopwareVersion, '6.6', '<'):
+                $prefix = '65';
+                break;
+            case version_compare($shopwareVersion, '6.6', '>='):
+            default:
+                $prefix = '66';
         }
 
         $loader = new XmlFileLoader($container, new FileLocator(__DIR__ . "/DependencyInjection/{$prefix}/"));

@@ -30,10 +30,11 @@ class Subscriber implements EventSubscriberInterface
         $page = $event->getPage();
         $request = $event->getRequest();
 
-        $vis = $request->query->get('vis');
-        if (empty($vis)) {
+        $queryParams = $request->query->all();
+        if (empty($queryParams['vis'])) {
             return;
         }
+        $vis = $queryParams['vis'];
         $vis = array_combine(
             array_map(function ($value): string {
                 return "vis[{$value}]";

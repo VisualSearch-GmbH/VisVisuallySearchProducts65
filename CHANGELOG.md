@@ -1,3 +1,6 @@
+# 2.0.2
+- Fixing bugs
+
 # 2.0.1
 - Fixing bugs
 
